@@ -1,0 +1,17 @@
+LINUKS
+**Настройка config**: 
+Здесь устанавливаются различные конфигурационные параметры, такие как ключи API, клиент Telegram, токен бота и соединения с базой данных .
+
+создание директории:  		   mkdir Telegram_Chat_Scraper
+переход в директорию: 		   cd Telegram_Chat_Scraper
+Добавление файлов                  main.py , config В директорию: 
+создание виртуального окружения:   python3 -m venv venv
+активация виртуального окружения:  source venv/bin/activate
+Устанавливаем зависимости c файла: pip install -r requirements.txt
+Создаем окно:                      screen + пробел + enter 
+Запускаем файл:			   python3 251123.py 
+Закрываем окно screen:             Strg + A + D
+Копируем номер скрина 
+для повторного входа:	           screen -r  xxx.ubuntu-2gb-fxx1-1
+
+

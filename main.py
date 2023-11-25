@@ -123,7 +123,7 @@ async def get_group_title(link):
         
     print(f"Превышено количество попыток для {link}. Переход к следующему.")
     return None
-# ... (ваш остальной код)
+
 
 async def process_last_messages(group_link):
     print(f"Начало обработки чата: {group_link}")

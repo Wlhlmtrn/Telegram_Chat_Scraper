@@ -7,7 +7,7 @@ from aiogram import Bot, types, Dispatcher, utils
 from config import YOUR_API_ID, YOUR_API_HASH, OPENAI_API_KEY, GROUP_LINKS, BOT_TOKEN
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from urllib.parse import quote
-import sqlite3
+
 
 # Настройка OpenAI и Telethon
 openai.api_key = OPENAI_API_KEY

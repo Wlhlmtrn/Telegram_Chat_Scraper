@@ -126,6 +126,7 @@ def truncate_message_to_words(message, max_words=700):
 
 # Измененная функция get_group_title для использования кэша
 async def get_group_title(link):
+<<<<<<< HEAD
     # Попытка получить заголовок из базы данных
     cached_title = cursor.execute("SELECT title FROM cached_titles WHERE chat_link = ?", (link,)).fetchone()
 
@@ -161,6 +162,29 @@ async def get_group_title(link):
 import sqlite3
 import time
 from telethon import errors
+=======
+  #  print("get_group_title")
+    retries = 3
+    for _ in range(retries):
+        try:
+            await asyncio.sleep(1)  # Задержка перед каждым запросом
+            group_entity = await client.get_entity(link)
+            return group_entity.title
+        
+        except errors.InviteHashExpiredError:
+            print(f"Ссылка-приглашение для {link} истекла.")
+            return None
+        except errors.FloodWaitError as e:
+            print(f"Необходимо подождать {e.seconds} секунд перед следующим запросом.")
+            await asyncio.sleep(e.seconds + 10)  # Задержка при получении FloodWaitError
+        except Exception as e:
+            print(f"Произошла ошибка при обработке {link}: {e}")
+            return None
+        
+    print(f"Превышено количество попыток для {link}. Переход к следующему.")
+    return None
+
+>>>>>>> 3979f4ac8b1aeff072a4e05314996cb2103d7fb6
 
 async def process_last_messages(group_link):
     print(f"Начало обработки чата: {group_link}")
